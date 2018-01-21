@@ -57,7 +57,6 @@ class Checkpoint:
                 self._empty += 1
     
     def check(self):
-        checkpoint = self
         self.empty_block_check()
         if self._empty > 0:
             self.row_list_maker()
@@ -81,13 +80,13 @@ class Checkpoint:
                 for block in self._blocks:
                     if block.get_poss_size() == min_poss:
                         guess_block = block
+                        break
                 for i in range(min_poss):                  
                     guess_block.put_poss()
                     blocks_copy = copy.deepcopy(self._blocks)
                     blocks_copy[guess_block.get_row() * 9 + guess_block.get_column()].set_poss([])
-                    checkpoint = Checkpoint(blocks_copy)
-                    c_blocks = checkpoint.check()
-                    if c_blocks != None:
+                    checkpoint_blocks = Checkpoint(blocks_copy).check()
+                    if checkpoint_blocks != None:
                         break
-                self._blocks = c_blocks
-        return checkpoint._blocks
+                self._blocks = checkpoint_blocks
+        return self._blocks
