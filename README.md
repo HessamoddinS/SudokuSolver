@@ -1,6 +1,6 @@
 # SudokuSolver
 This program is able to solve any 9x9 Sudokus.
-The algorithm used for this program can be used for Sudokus with differnet grid sizes as well.
+The algorithm designed for this program can be used for Sudokus with differnet grid sizes as well.
 
 # How to use
 Run Main.py
