@@ -1,12 +1,15 @@
 from Block import *
 from Checkpoint import *
+import sys
 
-def read_file(file_name):
-    file = open(file_name, 'r')
+
+def read_file(file):
     blocks = []
     row = 0
     for line in file:
         line = line.strip()
+        if len(line) < 9:
+            return None
         for column in range(0, len(line)):
             if row < 3:
                 box_num = 0
@@ -18,15 +21,36 @@ def read_file(file_name):
                 box_num += 1
             if column > 5:
                 box_num += 1
-            blocks.append(Block(int(line[column]), row, column, box_num))
+            try:
+                blocks.append(Block(int(line[column]), row, column, box_num))
+            except:
+                return None
         row += 1
-    return blocks
+        if row == 9:
+            return blocks
+    return None
 
-checkpoint = Checkpoint(read_file("Sudoku3.txt"))
-blocks = checkpoint.check();
-row_print = ""
-for block in blocks:
-    row_print += str(block.get_num())
-    if block.get_column() == 8:
-        row_print += "\n"
-print(row_print)
+if len(sys.argv) > 1:
+    for i in range(1, len(sys.argv)):
+        try:
+            file = open(sys.argv[i], 'r')
+            read = read_file(file)
+            file.close()
+            if read is not None:
+                checkpoint = Checkpoint(read)
+                blocks = checkpoint.check()
+                row_print = ""
+                for block in blocks:
+                    row_print += str(block.get_num())
+                    if block.get_column() == 8:
+                        row_print += "\n"
+                print(row_print)
+            else:
+                print(sys.argv[i] +
+                      " must have 9 lines, each line having 9 digits")
+        except:
+            print(sys.argv[i] + " cannot be opened")
+else:
+    print("usage: foo file ...")
+    exit(1)
+exit(0)
