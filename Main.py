@@ -39,12 +39,15 @@ if len(sys.argv) > 1:
             if read is not None:
                 checkpoint = Checkpoint(read)
                 blocks = checkpoint.check()
-                row_print = ""
-                for block in blocks:
-                    row_print += str(block.get_num())
-                    if block.get_column() == 8:
-                        row_print += "\n"
-                print(row_print)
+                if blocks is not None:
+                    row_print = ""
+                    for block in blocks:
+                        row_print += str(block.get_num())
+                        if block.get_column() == 8:
+                            row_print += "\n"
+                    print(row_print)
+                else:
+                    print(sys.argv[i] + " is not a correct Sudoku")
             else:
                 print(sys.argv[i] +
                       " must have 9 lines, each line having 9 digits")
