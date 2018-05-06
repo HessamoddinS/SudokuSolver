@@ -9,7 +9,7 @@ Run Main.py
 # Sudoku files
 File should contain at least 9 lines, each line having 9 digits.
 Look at the example below:
-![sudoku example](https://github.com/HessamoddinS/SudokuSolver/blob/master/Sudoku.png | width=100 "Sudoku Example")
+<img src="/Sudoku.png" width="100">
 
 This sudoku should be written in a file like this:
 ```
