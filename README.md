@@ -25,4 +25,4 @@ This sudoku should be written in a file like this:
 ```
 
 Put "0" for empty slots.</br>
-There are example sudoku files in the Example folder.
+There are example sudoku files in the "Examples" folder.
