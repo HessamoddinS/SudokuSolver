@@ -1,5 +1,5 @@
 # SudokuSolver
-This program is able to solve any 9x9 Sudokus.
+This program is able to solve any 9x9 Sudokus.</br>
 The algorithm designed for this program can be used for Sudokus with different grid sizes as well.
 
 # How to use
@@ -7,9 +7,9 @@ Run Main.py
 > python Main.py file ...
 
 # Sudoku files
-File should contain at least 9 lines, each line having 9 digits.
-Look at the example below:
-<img src="/Sudoku.png" width="100">
+File should contain at least 9 lines, each line having 9 digits.</br>
+Look at the example below:</br>
+<img src="/Sudoku.png" width="300">
 
 This sudoku should be written in a file like this:
 ```
@@ -24,5 +24,5 @@ This sudoku should be written in a file like this:
 000080079
 ```
 
-Put "0" for empty slots.
+Put "0" for empty slots.</br>
 There are example sudoku files in the Example folder.
