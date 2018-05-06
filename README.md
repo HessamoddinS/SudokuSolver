@@ -9,17 +9,20 @@ Run Main.py
 # Sudoku files
 File should contain at least 9 lines, each line having 9 digits.
 Look at the example below:
-![](https://github.com/HessamoddinS/SudokuSolver/blob/master/Sudoku.png | width=100)
+![sudoku example](https://github.com/HessamoddinS/SudokuSolver/blob/master/Sudoku.png | width=100 "Sudoku Example")
 
 This sudoku should be written in a file like this:
-> 530070000
-> 600195000
-> 098000060
-> 800060003
-> 400803001
-> 700020006
-> 060000280
-> 000419005
-> 000080079
+```
+530070000
+600195000
+098000060
+800060003
+400803001
+700020006
+060000280
+000419005
+000080079
+```
 
 Put "0" for empty slots.
+There are example sudoku files in the Example folder.
