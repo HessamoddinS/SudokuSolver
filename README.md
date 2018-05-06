@@ -8,7 +8,7 @@ Run Main.py
 
 # Sudoku files
 File should contain at least 9 lines, each line having 9 digits.</br>
-Look at the example below:</br>
+Look at the example below:</br></br>
 <img src="/Sudoku.png" width="300">
 
 This sudoku should be written in a file like this:
