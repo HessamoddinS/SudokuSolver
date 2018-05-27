@@ -11,16 +11,7 @@ def read_file(file):
         if len(line) < 9:
             return None
         for column in range(0, len(line)):
-            if row < 3:
-                box_num = 0
-            elif row < 6:
-                box_num = 3
-            else:
-                box_num = 6
-            if column > 2:
-                box_num += 1
-            if column > 5:
-                box_num += 1
+            box_num = (row // 3) * 3 + column // 3
             try:
                 blocks.append(Block(int(line[column]), row, column, box_num))
             except:
