@@ -65,25 +65,21 @@ class Checkpoint:
             self.box_list_maker()
             self.possible_nums()
             min_poss = -1
-            for block in self._blocks:
+            block_index = -1
+            for i in range(len(self._blocks)):
                 if (min_poss == -1 or
-                    block.get_poss_size() <= min_poss) \
-                   and block.get_num() == 0:
-                    min_poss = block.get_poss_size()
+                    self._blocks[i].get_poss_size() <= min_poss) \
+                   and self._blocks[i].get_num() == 0:
+                    min_poss = self._blocks[i].get_poss_size()
+                    block_index = i
             if min_poss == 1:
-                for block in self._blocks:
-                    if block.get_poss_size() == 1:
-                        block.put_poss()
-                        break
+                self._blocks[block_index].put_poss()
                 self._blocks = self.check()
             elif min_poss == 0:
                 self._blocks = None
             else:
                 blocks_copy = []
-                for block in self._blocks:
-                    if block.get_poss_size() == min_poss:
-                        guess_block = block
-                        break
+                guess_block = self._blocks[block_index]
                 for i in range(min_poss):
                     guess_block.put_poss()
                     blocks_copy = copy.deepcopy(self._blocks)
